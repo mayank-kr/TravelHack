@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import Itenerary from "../components/itenerary";
+import Itenerary from "../components/Itenerary";
+import {itenerary} from "../data/itenerary.json";
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
         </h1>
 
         <div className="itenerary">
-          <Itenerary itenerary={{}}/>
+          <Itenerary itenerary={itenerary}/>
         </div>
       </main>
 

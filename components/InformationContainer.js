@@ -15,12 +15,14 @@ export default function InformationContainer({icon,upperDescription,lowerDescrip
                       background: #a2a2d03b;
                     border-radius: 8px;
                     padding: 10px;
+                    grid-template-columns: 40px auto;
                 }
 
                 .icon{
                     grid-area: icon;
-                        display: flex;
-                        align-items: center;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                 }
 
                 .upper{

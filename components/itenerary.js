@@ -1,5 +1,6 @@
 import Flight from './Flight.js';
 import AccomodationCheckIn from './AccomodationCheckIn';
+import AccomodationCheckOut from './AccomodationCheckOut';
 import Restaurant from './Restaurant';
 
 export default function Itenerary({itenerary}){
@@ -17,16 +18,16 @@ export default function Itenerary({itenerary}){
                 />
             ))}
 
-            {itenerary.accomodation.map(place=>{
+            {itenerary.accomodation.map(place=>(
                 <AccomodationCheckIn
                     startDate={place.startDate}
                     checkInTime={place.checkInTime}
                     name={place.name}
                     address={place.address}
                 />
-            })}
+            ))}
 
-            {itenerary.restaurants.map(restaurant=>{
+            {itenerary.restaurants.map(restaurant=>(
                 <Restaurant
                     time={restaurant.time}
                     date={restaurant.date}
@@ -34,7 +35,16 @@ export default function Itenerary({itenerary}){
                     address={restaurant.address}
 
                 />
-            })}
+            ))}
+
+            {itenerary.accomodation.map(place=>(
+                <AccomodationCheckOut
+                    endDate={place.endDate}
+                    checkOutTime={place.checkOutTime}
+                    name={place.name}
+                    address={place.address}
+                />
+            ))}
 
             </div>
 
@@ -45,7 +55,6 @@ export default function Itenerary({itenerary}){
                     flex-direction: column;
                     grid-gap:18px;
                     padding:18px 0;
-                    width:150%;
                 }
 
             `}</style>

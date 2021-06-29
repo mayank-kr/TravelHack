@@ -12,7 +12,7 @@ export default function Home() {
 
       <main>
         <h1 className="title">
-          Welcome to <a href="https://mlh.io">Travel Hack!</a>
+          Welcome to <a href="#">Travel Hack!</a>
         </h1>
 
         <div className="itenerary">

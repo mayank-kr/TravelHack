@@ -4,7 +4,7 @@ export default function flight({departureTime, arrivalTime, date, destination,or
     return(
         <>
             <InformationContainer
-                icon="flight"
+                icon = "🛫"
                 upperDescription={`${date} ${departureTime} ${origin}`}
                 lowerDescription={`${date} ${arrivalTime} ${destination}`}
             />

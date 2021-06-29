@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Itenerary from "../components/itenerary";
 
 export default function Home() {
   return (
@@ -12,6 +13,10 @@ export default function Home() {
         <h1 className="title">
           Welcome to <a href="https://mlh.io">Travel Hack!</a>
         </h1>
+
+        <div className="itenerary">
+          <Itenerary itenerary={{}}/>
+        </div>
       </main>
 
       <footer>

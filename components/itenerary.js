@@ -7,26 +7,39 @@ export default function Itenerary({itenerary}){
     return (
         <>
             <div className="itenerary">
+                <h2>Flights</h2>
             {itenerary.flights.map(flights =>(
                 <Flight
-                    departureTime={flights.departureTime}
-                    arrivalTime={flights.arrivalTime}
-                    date={flights.date}
-                    origin={flights.origin}
-                    destination={flights.destination}
-                    key={flights.conformation}
+                departureTime={flights.departureTime}
+                arrivalTime={flights.arrivalTime}
+                date={flights.date}
+                origin={flights.origin}
+                destination={flights.destination}
+                key={flights.conformation}
                 />
-            ))}
+                ))}
 
+                <h2>Accomodation</h2>
             {itenerary.accomodation.map(place=>(
                 <AccomodationCheckIn
-                    startDate={place.startDate}
-                    checkInTime={place.checkInTime}
+                startDate={place.startDate}
+                checkInTime={place.checkInTime}
+                name={place.name}
+                address={place.address}
+                />
+                ))}
+
+                
+            {itenerary.accomodation.map(place=>(
+                <AccomodationCheckOut
+                    endDate={place.endDate}
+                    checkOutTime={place.checkOutTime}
                     name={place.name}
                     address={place.address}
                 />
             ))}
 
+                <h2>Dining</h2>
             {itenerary.restaurants.map(restaurant=>(
                 <Restaurant
                     time={restaurant.time}
@@ -37,14 +50,6 @@ export default function Itenerary({itenerary}){
                 />
             ))}
 
-            {itenerary.accomodation.map(place=>(
-                <AccomodationCheckOut
-                    endDate={place.endDate}
-                    checkOutTime={place.checkOutTime}
-                    name={place.name}
-                    address={place.address}
-                />
-            ))}
 
             </div>
 

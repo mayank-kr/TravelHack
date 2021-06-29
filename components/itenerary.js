@@ -1,15 +1,10 @@
 import Flight from './Flight.js';
+import AccomodationCheckIn from './AccomodationCheckIn';
+import Restaurant from './Restaurant';
 
 export default function Itenerary({itenerary}){
     return (
         <>
-        {/* <Flight
-            departureTime="06:50"
-            arrivalTime="09:50"
-            date="Jul 2"
-            destination="OSL"
-            origin="LHR"
-        /> */}
             <div className="itenerary">
             {itenerary.flights.map(flights =>(
                 <Flight
@@ -21,6 +16,26 @@ export default function Itenerary({itenerary}){
                     key={flights.conformation}
                 />
             ))}
+
+            {itenerary.accomodation.map(place=>{
+                <AccomodationCheckIn
+                    startDate={place.startDate}
+                    checkInTime={place.checkInTime}
+                    name={place.name}
+                    address={place.address}
+                />
+            })}
+
+            {itenerary.restaurants.map(restaurant=>{
+                <Restaurant
+                    time={restaurant.time}
+                    date={restaurant.date}
+                    name={restaurant.name}
+                    address={restaurant.address}
+
+                />
+            })}
+
             </div>
 
             <style jsx>{`
